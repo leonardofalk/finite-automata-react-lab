@@ -1,5 +1,4 @@
 @import '~antd/dist/antd.css';
-
 .header-title {
   color: #fffffa
 }
@@ -10,4 +9,16 @@ th, td {
 
 .ant-table-placeholder {
   display: none;
+}
+
+.ant-table-row.active {
+  background: #bcdcff;
+}
+
+.ant-table-row.active.green {
+  background: #a4fca9;
+}
+
+.ant-table-row.active.red {
+  background: #fc6a6a;
 }

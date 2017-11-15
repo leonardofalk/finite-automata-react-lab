@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
-import { Select } from 'antd';
-const Option = Select.Option;
+import React, {Component} from 'react';
+import {Select} from 'antd';
 
-export default class SelectWord extends Component {
+const Option = Select.Option;
+const styles = {
+  select: {
+    width: '100%'
+  }
+};
+
+class SelectWord extends Component {
   render = () => {
-    return (
-      <Select mode="tags"
-              size="large"
-              style={{ width: '100%' }}
-              placeholder="Gramática"
-              tokenSeparators={[',', ';', ' ']}
-              onChange={this.props.onChange}>
-        <Option disabled value="1">Digite as palavras que pertencem a gramática</Option>
-      </Select>
-    );
+    return (<Select tokenSeparators={[',', ';', ' ']} mode="tags" size="large" style={styles.select} placeholder="Gramática" onChange={this.props.onChange}>
+      <Option disabled={true} value="1">Digite as palavras que pertencem a gramática</Option>
+    </Select>);
   }
 }
+
+export default SelectWord;
