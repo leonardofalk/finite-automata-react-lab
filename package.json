@@ -1,6 +1,7 @@
 {
   "name": "infinity-automata",
   "version": "1.0.0",
+  "homepage": "https://leonardofalk.github.io/infinity-automata",
   "private": true,
   "dependencies": {
     "antd": "^2.13.10",

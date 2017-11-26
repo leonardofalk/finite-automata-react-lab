@@ -19,9 +19,15 @@ export default class App extends Component {
 
   onAddWord = (keys) => {
     this.tree.clear();
-    _.each(keys, word => this.tree.push(word));
+    _.each(keys, word => {
+      const match = word.match(/[^a-z]+/gi);
+
+      if (match === null) {
+        this.tree.push(word);
+      }
+    });
     this.tree.toArrayPerLevel();
-    this.setState({tableList: this.tree.perLevelArray()})
+    this.setState({tableList: this.tree.perLevelArray()});
   }
 
   onCheckWord = (keys) => {

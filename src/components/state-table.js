@@ -36,13 +36,14 @@ export default class StateTable extends Component {
     if (props.values && props.values.length > 0) {
       let datasource = [];
       const alphabetArray = ALPHABET.split('');
+      let nextFinal = false;
 
       _.each(props.values, (letterHash, index) => {
         let data = {
           key: datasource.length + 1,
-          '*': `q${index}${Object.keys(letterHash).length > 0
-            ? ''
-            : '*'}`
+          '*': `q${index}${nextFinal
+            ? '*'
+            : ''}`
         };
 
         _.each(alphabetArray, letter => {
@@ -50,6 +51,7 @@ export default class StateTable extends Component {
 
           if (letterHash[letter]) {
             data[letter] = letterHash[letter].state;
+            nextFinal = letterHash[letter].final;
           } else {
             data[letter] = '-';
           }
